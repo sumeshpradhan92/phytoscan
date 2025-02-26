@@ -27,7 +27,7 @@ app.config['MYSQL_DB'] = db['mysql_db']
 app.config['SECRET_KEY'] = db['secret_key']
 
 # Configure Gemini AI
-GOOGLE_API_KEY = 'AIzaSyAZC-MBm0J-e-QooIW_r8Sh9OlVxtuqioo'
+GOOGLE_API_KEY = 'GOOGLE_API_KEY'
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-1.5-flash')
 
