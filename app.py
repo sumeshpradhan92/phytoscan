@@ -18,16 +18,22 @@ from email_validator import validate_email, EmailNotValidError
 
 app = Flask(__name__)
 
-# Configure MySQL from yaml file
-db = yaml.safe_load(open('db.yaml'))
-app.config['MYSQL_HOST'] = db['mysql_host']
-app.config['MYSQL_USER'] = db['mysql_user']
-app.config['MYSQL_PASSWORD'] = db['mysql_password']
-app.config['MYSQL_DB'] = db['mysql_db']
-app.config['SECRET_KEY'] = db['secret_key']
+# Configure MySQL from environment variables
+database_url = os.getenv('DATABASE_URL', 'mysql://root:@localhost/botanical_garden')
+# Parse DATABASE_URL
+if database_url.startswith('mysql://'):
+    db_parts = database_url.replace('mysql://', '').split('/')
+    db_auth = db_parts[0].split('@')
+    db_user_pass = db_auth[0].split(':')
+    
+    app.config['MYSQL_HOST'] = db_auth[1]
+    app.config['MYSQL_USER'] = db_user_pass[0]
+    app.config['MYSQL_PASSWORD'] = db_user_pass[1] if len(db_user_pass) > 1 else ''
+    app.config['MYSQL_DB'] = db_parts[1]
+    app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'default-secret-key')
 
 # Configure Gemini AI
-GOOGLE_API_KEY = 'GOOGLE_API_KEY'
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-1.5-flash')
 
