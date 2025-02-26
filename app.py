@@ -3,6 +3,7 @@ from flask_mysqldb import MySQL
 from werkzeug.security import generate_password_hash, check_password_hash
 import re
 import yaml
+import logging
 from functools import wraps
 import os
 from datetime import datetime, timedelta
@@ -417,7 +418,18 @@ def pricing():
 def faq():
     return render_template('faq.html')
 
+
+
+logging.basicConfig(filename='error.log', level=logging.DEBUG)
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    logging.error(f"Internal Server Error: {e}")
+    return "An error occurred", 500
+
 # Call this when app starts
 if __name__ == '__main__':
     init_db()
     app.run(debug=True) 
+
+
