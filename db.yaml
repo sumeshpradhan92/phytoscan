@@ -1,2 +1,1 @@
-mysql_host: 'DATABASE_URL'
-secret_key: 'SECRET_KEY'
+
