@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% block title %}Features - PhytoScan{% endblock %}
+
+{% block content %}
+<div class="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
+    <!-- Hero Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Back Navigation -->
+        <div class="mb-8">
+            <a href="{{ url_for('index') }}" class="inline-flex items-center text-gray-600 hover:text-gray-900">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Back to Home
+            </a>
+        </div>
+        <div class="text-center">
+            <span class="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                Trusted by 5000+ Plant Enthusiasts
+            </span>
+            <h1 class="mt-6 text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">
+                Powerful Features for <br class="hidden sm:block"/>
+                <span class="text-green-600">Plant Health Management</span>
+            </h1>
+            <p class="mt-6 text-xl text-gray-600 max-w-2xl mx-auto">
+                Discover how PhytoScan's advanced AI technology helps you protect and monitor your plants with precision and ease.
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Features Grid -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- AI Detection -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-brain text-green-600 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">AI-Powered Detection</h3>
+                <p class="text-gray-600">State-of-the-art machine learning algorithms for accurate plant disease identification and diagnosis in real-time.</p>
+            </div>
+
+            <!-- Instant Analysis -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-bolt text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Instant Analysis</h3>
+                <p class="text-gray-600">Get immediate results and personalized recommendations for your plant's health conditions.</p>
+            </div>
+
+            <!-- Smart Recommendations -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-lightbulb text-purple-600 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Smart Recommendations</h3>
+                <p class="text-gray-600">Receive tailored treatment plans and care instructions based on your plant's specific needs.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Advanced Features Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- History Tracking -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                <h3 class="text-2xl font-semibold text-gray-900 mb-8">Comprehensive History Tracking</h3>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-history text-green-600"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-gray-900">Detailed Scan History</h4>
+                            <p class="mt-2 text-gray-600">Keep track of all your plant scans and monitor their health progress over time.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-chart-line text-green-600"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-gray-900">Progress Tracking</h4>
+                            <p class="mt-2 text-gray-600">Monitor treatment effectiveness and plant health improvements with detailed analytics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expert Support -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                <h3 class="text-2xl font-semibold text-gray-900 mb-8">Expert Support System</h3>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-user-md text-blue-600"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-gray-900">Professional Guidance</h4>
+                            <p class="mt-2 text-gray-600">Access to plant care specialists and expert advice when you need it most.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-users text-blue-600"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-gray-900">Community Support</h4>
+                            <p class="mt-2 text-gray-600">Join a thriving community of plant enthusiasts and share knowledge.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistics Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+        <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-green-600">5K+</div>
+                    <div class="mt-2 text-gray-600">Active Users</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-green-600">50K+</div>
+                    <div class="mt-2 text-gray-600">Plants Scanned</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-green-600">95%</div>
+                    <div class="mt-2 text-gray-600">Accuracy Rate</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-green-600">24/7</div>
+                    <div class="mt-2 text-gray-600">Support</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+        <div class="bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-12 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Ready to protect your plants?</h2>
+            <p class="text-green-50 mb-8 max-w-2xl mx-auto">Join thousands of plant enthusiasts using PhytoScan to keep their plants healthy and thriving.</p>
+            <a href="{{ url_for('register') }}" 
+               class="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-xl text-green-600 bg-white hover:bg-green-50 transition-colors duration-150">
+                Get Started Free
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %} 
